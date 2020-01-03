@@ -11,7 +11,7 @@ class Travel{
 	public function __invoke(){
 		try{
 			$start = $this->getExplain();
-			for($i=$start;$i<500000;$i++){
+			for($i=$start;$i<1000000;$i++){
 				// 可以被分解成
 				for ($j=1;$j<$i;$j++){
 					// 是否是素数
