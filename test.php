@@ -7,10 +7,11 @@
 class Travel{
 	private $primeFile = '素数集合.txt';
 	private $explainFile = 'explain.txt';
+	private $exceptionFile = 'exception.txt';
 	public function __invoke(){
 		try{
 			$start = $this->getExplain();
-			for($i=$start;$i<300000;$i++){
+			for($i=$start;$i<500000;$i++){
 				// 可以被分解成
 				for ($j=1;$j<$i;$j++){
 					// 是否是素数
@@ -30,6 +31,7 @@ class Travel{
 			}
 		}catch (\Throwable $e){
 			echo $e->getTraceAsString();
+            file_put_contents($this->exceptionFile, $e->getMessage());
 		}finally{
 
 		}
